@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz, preguntas y respuestas</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <main>
+            <section class="tarjeta tarjeta-comun" id="pantalla-bienvenida">
+                 <div>
+                     <h1>Bienvenido</h1>
+                     <p>Al juego de preguntas y respuestas</p>
+                 </div>
+                 <button class="boton" id="boton-siguiente" type="button">Siguiente</button> 
+            </section>
+
+            <section class=" tarjeta tarjeta-comun oculta" id="pantalla-usuario">
+                <form id="formulario-usuario">
+                    
+                    <label for="nombre-jugador">Nombre jugador</label>
+                    <input type="text" id="nombre-jugador" name="nombre-jugador" required>
+
+                    <p>Selecciona nivel</p>
+
+                    <div class="grupo-niveles">
+
+                        <div class="opcion-nivel">
+                            <input type="radio" id="facil" name="nivel" value="facil" required>
+                            <label for="facil">Fácil</label>
+                        </div>
+
+                        <div class="opcion-nivel">
+                            <input type="radio" id="medio" name="nivel" value="medio">
+                            <label for="medio">Medio</label>
+                        </div>
+
+                        <div class="opcion-nivel"> 
+                            <input type="radio" id="dificil" name="nivel" value="dificil">
+                            <label for="dificil">Difícil</label>
+                        </div>
+                       
+                    </div>
+
+                    <button class="boton" id="boton-guardar" type="submit">Guardar</button> 
+                    
+                </form>
+
+            </section>
+
+            <section class="tarjeta tarjeta-comun oculta" id="pantalla-reglas">
+                <h1>Reglas</h1>
+                <p>Cada nivel tiene una serie de preguntas y un tiempo determinado:</p>
+                <ul>
+                    <li>Nivel fácil: 5 preguntas, tiempo 30 segundos.</li>
+                    <li>Nivel medio: 8 preguntas, tiempo 50 segundos.</li>
+                    <li>Nivel difícil: 10 preguntas, tiempo 60 segundos.</li>
+                </ul>
+                <p>
+                     A continuación aparecerá en pantalla una pregunta de cultura general.
+                     Debajo de ella, tendrás cuatro posibles respuestas, solo una de ellas es correcta.
+                </p>
+                <button class="boton" id="boton-reglas-siguiente" type="button">Siguiente</button> 
+            </section>
+
+            <section class="tarjeta tarjeta-comun oculta" id="pantalla-preparados">
+                <h1>El juego comienza...</h1>
+                <button class="boton" id="boton-empezar" type="button">Empezar</button> 
+            </section>
+
+            <section class="tarjeta tarjeta-juego oculta" id="pantalla-juego">
+                <div class="info-juego">
+                    <p id="jugador-nombre-actual"></p>
+                    <p id="cronometro"></p>
+                </div>
+
+                <p id="contador-preguntas"></p>
+
+                <div class="pregunta">
+                    <h2 id="texto-pregunta"></h2>
+                </div>
+
+                <div class="respuestas">
+                    <button class="respuesta" type="button"></button>
+                    <button class="respuesta" type="button"></button>
+                    <button class="respuesta" type="button"></button>
+                    <button class="respuesta" type="button"></button>
+                </div>
+
+                <button class="boton" id="boton-siguiente-pregunta" type="button">Siguiente</button>
+
+            </section>
+
+            <section class="tarjeta tarjeta-comun oculta" id="pantalla-resultado">
+                <h1>Resultados</h1>
+
+                <p id="resultado-aciertos">Aciertos:</p>
+                <p id="veredicto"></p>
+                <button class="boton" id="boton-ranking" type="button">Siguiente</button>
+
+            </section>
+
+            <section class="tarjeta tarjeta-comun oculta" id="pantalla-ranking">
+                <h1>Jugador </h1>
+                <p>
+                    <strong>Nombre:</strong>
+                    <span id="ranking-nombre"></span>
+                </p>
+                <p>
+                    <strong>Nivel jugado:</strong>
+                    <span id="ranking-nivel"></span>
+                </p>
+                <p>
+                    <strong>Mejor puntuación:</strong>
+                    <span  id="ranking-aciertos"></span>
+                </p>
+                <p>
+                    <strong>Partidas jugadas:</strong>
+                    <span  id="ranking-partidas"></span>
+                </p>
+                <h2>Ranking</h2>
+                <ul id="lista-ranking"></ul>
+                <button class="boton" id="boton-volver-jugar" type="button">Volver a jugar</button>
+            </section>
+
+        </main>
+        
+        <footer class="pie-pagina">
+            <p>Lidia M E. Quiz 2026</p>
+        </footer>
+
+        <script src="script.js"></script>
+
+    </body>
+    
+</html>

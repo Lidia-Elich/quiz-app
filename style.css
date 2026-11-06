@@ -1,0 +1,370 @@
+/* ESTILO GENERAL DE QUIZ*/
+body{
+    margin: 0; /*proboca que el fondo llegue a todaaaa la pag*/
+    background-color: #FF89B7;
+
+}
+
+/*ESTILO CONTENIDO PRINCIPAL*/
+main{
+    min-height: 100vh;/*doy espacio para q los ejes tengan sentido*/
+    display: flex;
+    justify-content: center; /*centrado horizontal arriba*/
+    align-items: center; /*centrado vertical de la pag*/
+    padding: 20px;/*x si abrimos en pantalla pequeña que no queda expandida a  los lados*/
+
+}
+
+/*ESTILO TARJETAS*/
+.tarjeta{
+   width: 100%;/*cuánto espacio intenta ocupar*/
+   max-width: 600px ;/*impedir que en un monitor grande se haga gigantesca*/
+   padding:40px ;/*separar el contenido de los bordes*/
+   border-radius: 25px ;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) ;
+   text-align: center ;/*centrar contenido*/
+   box-sizing: border-box ;/*controlar correctamente cómo se calcula el ancho*/
+}
+
+/*ESTILO ESPECÍFICO TARJETAS*/
+.tarjeta-comun{
+    background-color: #FFF05C;
+    font-family:"Fira Sans", sans-serif;
+    
+}
+
+.tarjeta-comun h1{
+    font-size: 60px;
+    font-weight: 700;
+    color: #171616;
+    margin: 0 0 20px 0;
+}
+
+.tarjeta-comun p{
+    font-size: 30px;
+    font-weight: 500;
+    font-style: italic;
+    color: #171616;
+    margin: 0 0 30px 0;
+}
+
+.oculta {
+    display: none;
+}
+
+.tarjeta:not(.oculta) {
+    animation: aparecerTarjeta 0.4s ease;
+}
+/*ESTILO BOTONES*/
+.boton{
+
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    background-color: #171616;
+    color: white;
+}
+
+.boton:hover{
+    background-color: #000000;
+    color: #FFF05C;
+    transform: scale(1.3);
+}
+
+/*ESTILO USUARIO/NIVELES*/
+#pantalla-usuario form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.grupo-niveles{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-weight: 400;
+}
+
+.opcion-nivel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    font-weight: 400;
+   
+}
+
+/* PANTALLA REGLAS*/
+#pantalla-reglas h1{
+    font-size: 80px;
+    font-weight: 500;
+    color: #171616;
+    margin: 0 0 20px 0;
+}
+
+#pantalla-reglas p {
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: #171616;
+    margin: 0 0 30px 0;
+}
+
+#pantalla-reglas ul{
+    list-style: none;
+
+}
+
+#pantalla-reglas li{
+background-color: #fcd731;
+font-weight: 500;
+padding: 12px;
+margin: 12px;
+border-radius:20px ;
+}
+/*ESTILO JUEGO*/
+
+.info-juego{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-juego p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#contador-preguntas {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0;
+}
+
+/** ESTILO JUEGO*/
+/*facil*/
+.fondo-facil{
+    background-color: #50f355;
+}
+.juego-facil{
+    background-color: #47bb47;
+}
+
+.juego-facil #boton-siguiente-pregunta{
+    margin:25px;
+    background-color: #0c4c0c;
+}
+
+/* NIVEL MEDIO */
+
+.fondo-medio {
+    background-color: #ff8204;
+}
+
+.juego-medio{
+    background-color: #e2be1e;
+   
+}
+
+.juego-medio #boton-siguiente-pregunta{
+    margin: 25px;
+    background-color: #a15a13;
+}
+
+/* NIVEL DIFÍCIL */
+
+.fondo-dificil {
+    background-color: #824cbb;
+}
+
+.juego-dificil {
+    background-color: #bf9fd6;
+}
+
+.juego-dificil #boton-siguiente-pregunta{
+    margin: 20px;
+    background-color: #482271;
+}
+.pregunta{
+    margin-bottom: 30px;
+}
+
+#texto-pregunta{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.respuestas {
+    display: flex;
+    gap: 15px;
+}
+.respuesta {
+    flex: 1;
+    padding: 15px;
+    min-width: 0;
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: white;
+
+    font-family: "Fira Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+.correcta {
+    background-color: green;
+    color: white;
+    animation: aciertoPop 0.3s ease;
+}
+
+.incorrecta {
+    background-color: red;
+    color: white;
+    animation: temblar 0.3s ease;
+}
+
+/*Pantalla Marcador*/
+#pantalla-ranking h1, h2{
+     font-size: 80px;
+    font-weight: 500;
+    color: #171616;
+    margin: 0 0 20px 0;
+}
+
+#pantalla-ranking p {
+    font-size: 20px;
+    font-style: italic;
+    color: #000000;
+    margin: 12px;
+}
+
+#pantalla-ranking ul{
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#veredicto {
+    animation: aparecerResultado 0.5s ease;
+}
+
+/*ESTILO FOOTER*/
+.pie-pagina{
+    background-color: #d05987;
+    color: #d1ca8e;
+    margin: 50pxpx;
+    
+}
+
+
+/*RESPONSIVE*/
+/* TABLET */
+@media (max-width: 900px) {
+
+    .tarjeta {
+        max-width: 90%;
+    }
+
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+
+    .respuestas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .tarjeta {
+        padding: 20px;
+    }
+
+    .tarjeta-comun h1 {
+        font-size: 40px;
+    }
+
+
+}
+
+/*ANIMACIONES*/
+@keyframes aparecerTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes temblar {
+    0% {
+        transform: translateX(0); /*Posicion normal*/
+    }
+
+    25% {
+        transform: translateX(-6px);/*a la izq*/
+    }
+
+    50% {
+        transform: translateX(6px); /*a la drch*/
+    }
+
+    75% {
+        transform: translateX(-6px); /*izq*/
+    }
+
+    100% {
+        transform: translateX(0); /*posiion central*/
+    }
+}
+
+@keyframes aciertoPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes aparecerResultado {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
